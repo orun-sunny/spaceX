@@ -1,11 +1,15 @@
 import React from 'react';
 import { useSelector, useDispatch } from 'react-redux';
+import { remove } from '../Store/SpaceSlice';
 
 const Details = () => {
-    // const dispatch= useDispatch();
-        const products = useSelector((state) => state.Details);
+    const dispatch= useDispatch();
+        const products = useSelector((state) => state.space);
+        const handleRemove = (productId) => {
+            dispatch(remove(productId));
+        };
     return (
-        <div className='Details-all'>
+        <div className='productsWrapper'>
 
             {
               products.map((product) =>(
@@ -14,12 +18,15 @@ const Details = () => {
                      <h4>{product.mission_name}</h4>
                     <h5>{product.launch_year}</h5>                   
                      <h5>{product.details}</h5>
+                     <button onClick={() => handleRemove(product)} className="btn">
+                       Done
+                    </button>
 
                   </div>
               ))  
             }
 
-                <h3>hiiiiiiiiiiiiiiii</h3>
+               
         </div>
     );
 };

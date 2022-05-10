@@ -48,7 +48,7 @@ const Products = () => {
                     <h5>{product.launch_year}</h5>
                     <h5>{product.launch_date_local}</h5>
                     <button onClick={() => handleAdd(product)} className="btn">
-                        Add to cart
+                        see details
                     </button>
                 </div>
             ))}
