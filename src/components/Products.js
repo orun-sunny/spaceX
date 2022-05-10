@@ -32,12 +32,16 @@ const Products = () => {
         const searchText = event.target.value;
         const matchedProducts =products.filter(product => product.rocket.rocket_name.toLowerCase().includes(searchText.toLowerCase()));
         // console.log(event.target.value);
+        // console.log(matchedProducts)
         setDisplayProducts(matchedProducts);
         // console.log(matchedProducts.length);
-    }
+    };
+
+  
 
     return (
         <>
+          
         <div className="search-bar">
                 <input
                 onChange={()=>handleSearch}

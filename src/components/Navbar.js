@@ -12,10 +12,25 @@ const Navbar = () => {
         console.log(term);
     }
     //  const items = useSelector((state) => state.space);
+    const handleDate = (event) =>{
+        const searchText = event.target.value;
+        const matchedProducts =Products.filter(product => product.launch_date_utctoLowerCase().includes(searchText.toLowerCase()));
+        // console.log(event.target.value);
+        // setDisplayProducts(matchedProducts);
+        // console.log(matchedProducts.length);
+    }
     
     return (
         <>
-       
+        <div className="date">
+                <input
+                onChange={()=> handleDate }
+                
+                type="text"
+                 placeholder="date" />
+                 {/* <button className="btn-style" type="submit"><i className="fa fa-search"></i></button> */}
+
+            </div>
             
 
 
