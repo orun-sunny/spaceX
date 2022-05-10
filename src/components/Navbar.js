@@ -20,13 +20,13 @@ const Navbar = () => {
 
 
 
-            {/* <div className="search-bar">
+            <div className="search-bar">
                 <form className="form-color" onSubmit={submitHandler}>
-                <input type="text" value={term } placeholder= "rocket name" onChange="{(e)=>setTerm(e.target.value) }"/>
+                <input type="text" value={term } placeholder= "rocket name" onChange={(e)=>setTerm(e.target.value) }/>
                 <button className="btn-style" type="submit"><i className="fa fa-search"></i></button>
                 </form>
 
-            </div> */}
+            </div>
             <div>
                 <Link className="navLink" to="/">
                     Home
