@@ -4,30 +4,19 @@ import { useSelector } from 'react-redux';
 import Products from './Products';
 
 
+
 const Navbar = () => {
     const [term,setTerm] = useState("");
     const submitHandler = (e) =>{
         e.preventDefault();
         console.log(term);
     }
-    // const items = useSelector((state) => state.cart);
-    const handleSearch = event =>{
-        const searchText =event.target.value;
-        const matchedProducts = Products.filter(product => product.name.includes(searchText));
-        console.log(event.target.value);
-        console.log(matchedProducts.length);
-    }
+    //  const items = useSelector((state) => state.space);
+    
     return (
         <>
        
-            <div className="search-bar">
-                <input
-                onChange={handleSearch}
-                
-                type="text"
-                 placeholder="type rocket" />
-
-            </div>
+            
 
 
 
@@ -42,10 +31,10 @@ const Navbar = () => {
                 <Link className="navLink" to="/">
                     Home
                 </Link>
-                <Link className="navLink" to="/cart">
-                    Cart
+                <Link className="navLink" to="/Details">
+                    Details
                 </Link>
-                 {/* <span className="cartCount">Cart items: {items.length}</span>  */}
+                 {/* <span className="cartCount">Cart items: {space.length}</span>  */}
             </div>
             
       

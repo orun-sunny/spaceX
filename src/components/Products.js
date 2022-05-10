@@ -1,10 +1,11 @@
 import React, { useState, useEffect } from 'react';
-// import { useDispatch, useSelector } from 'react-redux';
+import { useDispatch, useSelector } from 'react-redux';
 // import { add } from '../Store/DetailsSlice';
 // import { fetchProducts } from '../Store/DetailsSlice';
 // import { STATUSES } from '../store/productSlice';
+import { add } from '../Store/SpaceSlice';
 const Products = () => {
-    //  const dispatch = useDispatch();
+     const dispatch = useDispatch();
 
      const [products, setProducts] = useState([]);
 
@@ -19,11 +20,26 @@ const Products = () => {
         fetchProducts();
     }, []);
 
-    // const handleAdd = (product) => {
-    //     dispatch(add(product));
-    // };
+    const handleAdd = (product) => {
+        dispatch(add(product));
+    };
+    const handleSearch = event =>{
+        const searchText =event.target.value;
+        const matchedProducts = setProducts.filter(product => product.mission_name.includes(searchText));
+        console.log(event.target.value);
+        console.log(matchedProducts.length);
+    }
 
     return (
+        <>
+        <div className="search-bar">
+                <input
+                onChange={handleSearch}
+                
+                type="text"
+                 placeholder="type rocket" />
+
+            </div>
         <div className="productsWrapper">
             {products.map((product) => (
                 <div className="card" key={product.flight_number}>
@@ -31,12 +47,13 @@ const Products = () => {
                     <h4>{product.mission_name}</h4>
                     <h5>{product.launch_year}</h5>
                     <h5>{product.launch_date_local}</h5>
-                    {/* <button onClick={() => handleAdd(product)} className="btn">
+                    <button onClick={() => handleAdd(product)} className="btn">
                         Add to cart
-                    </button> */}
+                    </button>
                 </div>
             ))}
         </div>
+        </>
     );
 };
 
