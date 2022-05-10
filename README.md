@@ -1,6 +1,16 @@
-# Getting Started with Create React App
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+#Created  a react 
+app with redux store management 
+here i used redux toolkit which maintains API data.
+
+Display the data in cards in UI
+
+search with rocket name 
+just click on details button then it will store details state,, if i click on details route then it will with details in this part.
+
+Actually this not store in localStore so if page load iteam will not saved.
+
+
 
 ## Available Scripts
 
