@@ -13,7 +13,7 @@ const Details = () => {
 
             {
               products.map((product) =>(
-                  <div className='DetailsCard'>
+                  <div key={product.Id} className='DetailsCard'>
                       <img src={product.links.mission_patch} alt="" />
                      <h4>{product.mission_name}</h4>
                     <h5>{product.launch_year}</h5>                   
